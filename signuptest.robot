@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation  Tests for testing create an account form
 Library  SeleniumLibrary
-Library  extended_keywords
+
 Resource  Resource/Variables.robot
 Resource  Resource/Keywords.robot
 
@@ -20,9 +20,8 @@ S1 User can use search field with valid data (use enter)
 
 S2 User can use serch field to find specific product (use enter)
     [Tags]  search1
-    click element  ${SEARCH_LOCATOR}
-    input text  ${SEARCH_LOCATOR}  ${INPUT_TEXT_VAR_TWO}
-    press key  ${SEARCH_LOCATOR}  \\13
+    click and input text
+    press keys  ${None}  \\13
     wait until page contains element  ${SPECICIFIC_PRODUCT_CARD_LOCATOR}
 
 
@@ -69,11 +68,22 @@ S7 Able to search with special characters in search field
 S8 Make search for item of prodact
     [Tags]  search
     click element  ${SEARCH_LOCATOR}
-    input text  ${SEARCH_LOCATOR}
-    sum_of_two_int
-    #${ITEM_OF_PRODUCT}
+    input text  ${SEARCH_LOCATOR}  ${ITEM_OF_PRODUCT}
     click button  ${SEARCH_BUTTON_LOCATOR}
     wait until page contains element  ${PRODUCT_NOT_FOUND_ERROR_MESSEGE}
+
+
+SM1 Find product and making order (first smoke test)
+    [Tags]  smoke
+    input text and press enter
+    add product to card
+    go to card
+    choose delivery type
+    press order button
+
+
+
+
 
 
 
