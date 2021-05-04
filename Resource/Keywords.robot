@@ -2,6 +2,7 @@
 Documentation  Keywords for sigup tests
 Library  SeleniumLibrary
 Library  String
+Library  ./Resource/extendedkeywords.py
 Resource  Variables.robot
 
 
@@ -47,8 +48,37 @@ press order button
     wait until page contains element  ${ORDERING_PAGE_LOCATOR}
 
 
+generate random email and input in "Email" field
+    ${random_email}  generate_random_emails  ${12}
+    click element  ${EMAIL_REGISTRATION_FIELD}
+    input text  ${EMAIL_REGISTRATION_FIELD}  ${random_email}
 
 
+generate random password and input in "Password" field
+    ${random_password}  generate_random_password  ${10}
+    click element  ${PASSWORD_REGISTRATION_FIELD}
+    input text  ${PASSWORD_REGISTRATION_FIELD}  ${random_password}
+
+
+press registration button
+    click element  ${REGISTRATION_BUTTON}
+
+
+click on log in/sign up tab
+    click element  ${LOG_IN_TAB_LOCATOR}
+
+
+click "make new profile" button
+    click element  ${MAKE_NEW_PROFILE_BUTTON}
+
+wait until "my profile" tab should be opened
+    wait until page contains element  ${MY_PROFILE_WINDOW}  10
+
+wait for "need to enter email" error message
+    wait until page contains element  ${NEED_TO_ENTER_EMAIL_ERROR_MESSEGE}  10
+
+wait for "need to enter password" error message
+     wait until page contains element  ${NEED_TO_ENTER_PASSWORD_ERROR_MESSAGE}  10
 
 
 

@@ -1,185 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.2 (Python 3.9.4 on win32)" generated="20210429 17:14:26.725" rpa="false">
+<robot generator="Robot 3.2.2 (Python 3.9.4 on win32)" generated="20210504 14:59:08.146" rpa="false">
 <suite id="s1" name="Orbita-Automation" source="E:\github\orbita-automation\orbita-automation">
 <suite id="s1-s1" name="Signuptest" source="E:\github\orbita-automation\orbita-automation\signuptest.robot">
-<test id="s1-s1-t1" name="E2E Simple smoke test">
+<test id="s1-s1-t1" name="SU4 Unable to make new user registration with emty &quot;Password&quot; and &quot;Email&quot; fields (without using emai land password)">
 <kw name="Open Browser" library="SeleniumLibrary" type="setup">
 <doc>Opens a new browser instance to the optional ``url``.</doc>
 <arguments>
 <arg>${AUTH_PAGE_URL}</arg>
 <arg>chrome</arg>
 </arguments>
-<msg timestamp="20210429 17:14:26.873" level="INFO">Opening browser 'chrome' to base url 'https://orbita.te.ua/'.</msg>
-<status status="PASS" starttime="20210429 17:14:26.873" endtime="20210429 17:14:29.336"></status>
+<msg timestamp="20210504 14:59:08.299" level="INFO">Opening browser 'chrome' to base url 'https://orbita.te.ua/'.</msg>
+<status status="PASS" starttime="20210504 14:59:08.299" endtime="20210504 14:59:10.760"></status>
 </kw>
-<kw name="input text and press enter" library="Keywords">
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${SEARCH_LOCATOR}</arg>
-<arg>${INPUT_TEXT_VAR_ONE}</arg>
-<arg>"мультиварка"</arg>
-</arguments>
-<msg timestamp="20210429 17:14:29.337" level="INFO">Typing text '"мультиварка"' into text field 'xpath=(//input[@name='s'])[2]'.</msg>
-<status status="PASS" starttime="20210429 17:14:29.337" endtime="20210429 17:14:29.473"></status>
-</kw>
-<kw name="Press Keys" library="SeleniumLibrary">
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<arguments>
-<arg>${None}</arg>
-<arg>\ue007</arg>
-</arguments>
-<msg timestamp="20210429 17:14:29.473" level="INFO">Sending key(s) ('\ue007',) to page.</msg>
-<msg timestamp="20210429 17:14:29.473" level="INFO">Sending key </msg>
-<status status="PASS" starttime="20210429 17:14:29.473" endtime="20210429 17:14:33.633"></status>
-</kw>
-<status status="PASS" starttime="20210429 17:14:29.336" endtime="20210429 17:14:33.633"></status>
-</kw>
-<kw name="add product and go to card" library="Keywords">
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210429 17:14:33.634" endtime="20210429 17:14:33.797"></status>
-</kw>
-<kw name="Scroll Page To Location" library="Keywords">
-<arguments>
-<arg>0</arg>
-<arg>475</arg>
-</arguments>
-<kw name="Execute Javascript" library="SeleniumLibrary">
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<arguments>
-<arg>window.scrollTo(${x_location},${y_location})</arg>
-</arguments>
-<msg timestamp="20210429 17:14:33.798" level="INFO">Executing JavaScript:
-window.scrollTo(0,475)
-Without any arguments.</msg>
-<status status="PASS" starttime="20210429 17:14:33.798" endtime="20210429 17:14:33.892"></status>
-</kw>
-<status status="PASS" starttime="20210429 17:14:33.798" endtime="20210429 17:14:33.892"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>2</arg>
-</arguments>
-<msg timestamp="20210429 17:14:35.907" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20210429 17:14:33.892" endtime="20210429 17:14:35.907"></status>
-</kw>
-<kw name="Mouse Over" library="SeleniumLibrary">
-<doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${MOUSE_OVER}</arg>
-</arguments>
-<msg timestamp="20210429 17:14:35.909" level="INFO">Simulating Mouse Over on element 'css=.grid-inner'.</msg>
-<status status="PASS" starttime="20210429 17:14:35.908" endtime="20210429 17:14:36.216"></status>
-</kw>
-<kw name="Mouse Over" library="SeleniumLibrary">
-<doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${PRODACT_CARD_LOCATOR}</arg>
-</arguments>
-<msg timestamp="20210429 17:14:36.216" level="INFO">Simulating Mouse Over on element 'xpath=//a[contains(@href, '?add-to-cart=270627')]'.</msg>
-<status status="PASS" starttime="20210429 17:14:36.216" endtime="20210429 17:14:36.500"></status>
-</kw>
+<kw name="click on log in/sign up tab" library="Keywords">
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
-<arg>${PRODACT_CARD_LOCATOR}</arg>
+<arg>${LOG_IN_TAB_LOCATOR}</arg>
 </arguments>
-<msg timestamp="20210429 17:14:36.500" level="INFO">Clicking element 'xpath=//a[contains(@href, '?add-to-cart=270627')]'.</msg>
-<status status="PASS" starttime="20210429 17:14:36.500" endtime="20210429 17:14:36.576"></status>
+<msg timestamp="20210504 14:59:10.760" level="INFO">Clicking element 'css=.login-topbar.pull-right'.</msg>
+<status status="PASS" starttime="20210504 14:59:10.760" endtime="20210504 14:59:13.887"></status>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>3</arg>
-</arguments>
-<msg timestamp="20210429 17:14:39.578" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20210429 17:14:36.576" endtime="20210429 17:14:39.578"></status>
+<status status="PASS" starttime="20210504 14:59:10.760" endtime="20210504 14:59:13.887"></status>
 </kw>
+<kw name="click &quot;make new profile&quot; button" library="Keywords">
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
-<arg>${GO_TO_CART_BUTTON}</arg>
+<arg>${MAKE_NEW_PROFILE_BUTTON}</arg>
 </arguments>
-<msg timestamp="20210429 17:14:39.579" level="INFO">Clicking element 'xpath=(//a[contains(text(),'Переглянути кошик')])[3]'.</msg>
-<status status="PASS" starttime="20210429 17:14:39.579" endtime="20210429 17:14:42.883"></status>
+<msg timestamp="20210504 14:59:13.888" level="INFO">Clicking element 'CSS=.creat-account.register-login-action'.</msg>
+<status status="PASS" starttime="20210504 14:59:13.888" endtime="20210504 14:59:13.944"></status>
 </kw>
+<status status="PASS" starttime="20210504 14:59:13.887" endtime="20210504 14:59:13.944"></status>
+</kw>
+<kw name="press registration button" library="Keywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${REGISTRATION_BUTTON}</arg>
+</arguments>
+<msg timestamp="20210504 14:59:13.945" level="INFO">Clicking element 'name=register'.</msg>
+<status status="PASS" starttime="20210504 14:59:13.945" endtime="20210504 14:59:16.918"></status>
+</kw>
+<status status="PASS" starttime="20210504 14:59:13.945" endtime="20210504 14:59:16.918"></status>
+</kw>
+<kw name="wait for &quot;need to enter email&quot; error massege" library="Keywords">
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
 <arguments>
-<arg>${CARD_PAGE_LOCATOR}</arg>
-<arg>15</arg>
+<arg>${NEED_TO_ENTER_EMAIL_ERROR_MESSEGE}</arg>
+<arg>10</arg>
 </arguments>
-<status status="PASS" starttime="20210429 17:14:42.883" endtime="20210429 17:14:42.898"></status>
+<status status="PASS" starttime="20210504 14:59:16.919" endtime="20210504 14:59:16.995"></status>
 </kw>
-<status status="PASS" starttime="20210429 17:14:33.633" endtime="20210429 17:14:42.898"></status>
-</kw>
-<kw name="choose delivery type" library="Keywords">
-<kw name="Scroll Page To Location" library="Keywords">
-<arguments>
-<arg>0</arg>
-<arg>750</arg>
-</arguments>
-<kw name="Execute Javascript" library="SeleniumLibrary">
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<arguments>
-<arg>window.scrollTo(${x_location},${y_location})</arg>
-</arguments>
-<msg timestamp="20210429 17:14:42.899" level="INFO">Executing JavaScript:
-window.scrollTo(0,750)
-Without any arguments.</msg>
-<status status="PASS" starttime="20210429 17:14:42.898" endtime="20210429 17:14:42.992"></status>
-</kw>
-<status status="PASS" starttime="20210429 17:14:42.898" endtime="20210429 17:14:42.992"></status>
-</kw>
-<kw name="Select Radio Button" library="SeleniumLibrary">
-<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
-<arguments>
-<arg>shipping_method[0]</arg>
-<arg>shipping_method_0_local_pickup12</arg>
-</arguments>
-<msg timestamp="20210429 17:14:42.993" level="INFO">Selecting 'shipping_method_0_local_pickup12' from radio button 'shipping_method[0]'.</msg>
-<status status="PASS" starttime="20210429 17:14:42.993" endtime="20210429 17:14:43.017"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>2</arg>
-</arguments>
-<msg timestamp="20210429 17:14:45.031" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20210429 17:14:43.018" endtime="20210429 17:14:45.031"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${GO_TO_ORDERING_BUTTON}</arg>
-</arguments>
-<msg timestamp="20210429 17:14:45.033" level="INFO">Clicking element 'css=.btn-outline'.</msg>
-<status status="PASS" starttime="20210429 17:14:45.032" endtime="20210429 17:14:48.298"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<arguments>
-<arg>${ORDERING_PAGE_LOCATOR}</arg>
-</arguments>
-<status status="PASS" starttime="20210429 17:14:48.298" endtime="20210429 17:14:48.319"></status>
-</kw>
-<status status="PASS" starttime="20210429 17:14:42.898" endtime="20210429 17:14:48.319"></status>
+<status status="PASS" starttime="20210504 14:59:16.918" endtime="20210504 14:59:16.995"></status>
 </kw>
 <kw name="Close All Browsers" library="SeleniumLibrary" type="teardown">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20210429 17:14:48.320" endtime="20210429 17:14:50.465"></status>
+<status status="PASS" starttime="20210504 14:59:16.995" endtime="20210504 14:59:19.293"></status>
 </kw>
 <tags>
-<tag>smoke</tag>
+<tag>registration</tag>
 </tags>
-<status status="PASS" starttime="20210429 17:14:26.873" endtime="20210429 17:14:50.466" critical="yes"></status>
+<status status="PASS" starttime="20210504 14:59:08.299" endtime="20210504 14:59:19.294" critical="yes"></status>
 </test>
 <doc>Tests for testing create an account form</doc>
-<status status="PASS" starttime="20210429 17:14:26.744" endtime="20210429 17:14:50.468"></status>
+<status status="PASS" starttime="20210504 14:59:08.166" endtime="20210504 14:59:19.296"></status>
 </suite>
-<status status="PASS" starttime="20210429 17:14:26.726" endtime="20210429 17:14:50.470"></status>
+<status status="PASS" starttime="20210504 14:59:08.147" endtime="20210504 14:59:19.297"></status>
 </suite>
 <statistics>
 <total>
@@ -187,7 +76,7 @@ Without any arguments.</msg>
 <stat pass="1" fail="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0">smoke</stat>
+<stat pass="1" fail="0">registration</stat>
 </tag>
 <suite>
 <stat pass="1" fail="0" id="s1" name="Orbita-Automation">Orbita-Automation</stat>
@@ -195,5 +84,6 @@ Without any arguments.</msg>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20210504 14:59:08.298" level="ERROR">Error in file 'E:\github\orbita-automation\orbita-automation\Resource\Keywords.robot' on line 5: Test library 'Resource\extendedkeywords.py' does not exist.</msg>
 </errors>
 </robot>

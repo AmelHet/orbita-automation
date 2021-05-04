@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation  Tests for testing create an account form
 Library  SeleniumLibrary
+Library  ./Resource/extendedkeywords.py
 
 Resource  Resource/Variables.robot
 Resource  Resource/Keywords.robot
@@ -81,6 +82,54 @@ SM1 Find product and making order (first smoke test)
     choose delivery type
     press order button
 
+
+Search something
+    [Tags]  smoke1
+    ${random_email}  generate_random_emails  ${8}
+    click element  ${SEARCH_LOCATOR}
+    input text  ${SEARCH_LOCATOR}  ${random_email}
+    click button  ${SEARCH_BUTTON_LOCATOR}
+
+
+SU1 Unable to make new user registration with using valid data in all fields
+    [Tags]  registration
+    click on log in/sign up tab
+    click "make new profile" button
+    generate random email and input in "Email" field
+    generate random password and input in "Password" field
+    simulate event  ${PASSWORD_REGISTRATION_FIELD}  blur
+    press registration button
+    wait until "my profile" tab should be opened
+
+
+SU2 Unable to make new user registration with emty "Email" field (without using email)
+    [Tags]  registration
+    click on log in/sign up tab
+    click "make new profile" button
+    generate random password and input in "Password" field
+    simulate event  ${PASSWORD_REGISTRATION_FIELD}  blur
+    press registration button
+    wait for "need to enter email" error message
+
+
+SU3 Unable to make new user registration with emty "password" field (without using password)
+    [Tags]  registration
+    click on log in/sign up tab
+    click "make new profile" button
+    generate random email and input in "Email" field
+    simulate event  ${EMAIL_REGISTRATION_FIELD}  blur
+    press registration button
+    wait for "need to enter password" error message
+
+SU4 Unable to make new user registration with emty "Password" and "Email" fields (without using emai land password)
+    [Tags]  registration
+    click on log in/sign up tab
+    click "make new profile" button
+    press registration button
+    wait for "need to enter email" error message
+
+SU5 Unable to make new user registration with data (email and password) that has already been used to sign up user in the past
+    [Tags]  registration
 
 
 

@@ -24,9 +24,16 @@ ${CARD_PAGE_LOCATOR}  xpath=//*[contains(text(),'Кошик для покупо�
 ${DELIVERY_RADIOBUTTON_VAR}  id=shipping_method_0_flat_rate15
 ${GO_TO_ORDERING_BUTTON}  css=.btn-outline
 ${ORDERING_PAGE_LOCATOR}  css=.active:nth-child(2)
-
-
-
+${LOG_IN_TAB_LOCATOR}  css=.login-topbar.pull-right
+${EMAIL_LOG_IN_FIELD}  id=username
+${PASSWORD_LOG_IN_FIELD}  id=password
+${MAKE_NEW_PROFILE_BUTTON}  CSS=.creat-account.register-login-action
+${EMAIL_REGISTRATION_FIELD}  id=reg_email
+${PASSWORD_REGISTRATION_FIELD}  id=reg_password
+${REGISTRATION_BUTTON}  name=register                      #css=.btn.btn-primary.btn-block
+${MY_PROFILE_WINDOW}  css=.bread-title
+${NEED_TO_ENTER_EMAIL_ERROR_MESSEGE}  xpath=//li[contains(.,'Помилка: Будь ласка, зазначте дійсну адресу електронної пошти.')]
+${NEED_TO_ENTER_PASSWORD_ERROR_MESSAGE}  xpath=//li[contains(.,'Будь ласка, введіть пароль облікового запису.')]
 
 
 
