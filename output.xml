@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.2 (Python 3.9.4 on win32)" generated="20210504 14:59:08.146" rpa="false">
+<robot generator="Robot 3.2.2 (Python 3.9.4 on win32)" generated="20210505 23:08:40.017" rpa="false">
 <suite id="s1" name="Orbita-Automation" source="E:\github\orbita-automation\orbita-automation">
 <suite id="s1-s1" name="Signuptest" source="E:\github\orbita-automation\orbita-automation\signuptest.robot">
-<test id="s1-s1-t1" name="SU4 Unable to make new user registration with emty &quot;Password&quot; and &quot;Email&quot; fields (without using emai land password)">
+<test id="s1-s1-t1" name="SU8 Unable to create new user registration with invalid email ( do not use @ in email)">
 <kw name="Open Browser" library="SeleniumLibrary" type="setup">
 <doc>Opens a new browser instance to the optional ``url``.</doc>
 <arguments>
 <arg>${AUTH_PAGE_URL}</arg>
 <arg>chrome</arg>
 </arguments>
-<msg timestamp="20210504 14:59:08.299" level="INFO">Opening browser 'chrome' to base url 'https://orbita.te.ua/'.</msg>
-<status status="PASS" starttime="20210504 14:59:08.299" endtime="20210504 14:59:10.760"></status>
+<msg timestamp="20210505 23:08:40.233" level="INFO">Opening browser 'chrome' to base url 'https://orbita.te.ua/'.</msg>
+<status status="PASS" starttime="20210505 23:08:40.233" endtime="20210505 23:08:49.759"></status>
 </kw>
 <kw name="click on log in/sign up tab" library="Keywords">
 <kw name="Click Element" library="SeleniumLibrary">
@@ -18,10 +18,10 @@
 <arguments>
 <arg>${LOG_IN_TAB_LOCATOR}</arg>
 </arguments>
-<msg timestamp="20210504 14:59:10.760" level="INFO">Clicking element 'css=.login-topbar.pull-right'.</msg>
-<status status="PASS" starttime="20210504 14:59:10.760" endtime="20210504 14:59:13.887"></status>
+<msg timestamp="20210505 23:08:49.760" level="INFO">Clicking element 'css=.login-topbar.pull-right'.</msg>
+<status status="PASS" starttime="20210505 23:08:49.760" endtime="20210505 23:08:53.312"></status>
 </kw>
-<status status="PASS" starttime="20210504 14:59:10.760" endtime="20210504 14:59:13.887"></status>
+<status status="PASS" starttime="20210505 23:08:49.759" endtime="20210505 23:08:53.312"></status>
 </kw>
 <kw name="click &quot;make new profile&quot; button" library="Keywords">
 <kw name="Click Element" library="SeleniumLibrary">
@@ -29,61 +29,65 @@
 <arguments>
 <arg>${MAKE_NEW_PROFILE_BUTTON}</arg>
 </arguments>
-<msg timestamp="20210504 14:59:13.888" level="INFO">Clicking element 'CSS=.creat-account.register-login-action'.</msg>
-<status status="PASS" starttime="20210504 14:59:13.888" endtime="20210504 14:59:13.944"></status>
+<msg timestamp="20210505 23:08:53.313" level="INFO">Clicking element 'CSS=.creat-account.register-login-action'.</msg>
+<status status="PASS" starttime="20210505 23:08:53.313" endtime="20210505 23:08:53.535"></status>
 </kw>
-<status status="PASS" starttime="20210504 14:59:13.887" endtime="20210504 14:59:13.944"></status>
+<status status="PASS" starttime="20210505 23:08:53.312" endtime="20210505 23:08:53.535"></status>
 </kw>
-<kw name="press registration button" library="Keywords">
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
+<kw name="ener invalid email" library="Keywords">
+<kw name="generate_invalid_email">
 <arguments>
-<arg>${REGISTRATION_BUTTON}</arg>
+<arg>${4,5}</arg>
 </arguments>
-<msg timestamp="20210504 14:59:13.945" level="INFO">Clicking element 'name=register'.</msg>
-<status status="PASS" starttime="20210504 14:59:13.945" endtime="20210504 14:59:16.918"></status>
+<assign>
+<var>${invalid_random_email}</var>
+</assign>
+<msg timestamp="20210505 23:08:53.544" level="FAIL">No keyword with name 'generate_invalid_email' found. Did you mean:
+    Keywords.Ener Invalid Email</msg>
+<status status="FAIL" starttime="20210505 23:08:53.544" endtime="20210505 23:08:53.544"></status>
 </kw>
-<status status="PASS" starttime="20210504 14:59:13.945" endtime="20210504 14:59:16.918"></status>
-</kw>
-<kw name="wait for &quot;need to enter email&quot; error massege" library="Keywords">
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<arguments>
-<arg>${NEED_TO_ENTER_EMAIL_ERROR_MESSEGE}</arg>
-<arg>10</arg>
-</arguments>
-<status status="PASS" starttime="20210504 14:59:16.919" endtime="20210504 14:59:16.995"></status>
-</kw>
-<status status="PASS" starttime="20210504 14:59:16.918" endtime="20210504 14:59:16.995"></status>
+<status status="FAIL" starttime="20210505 23:08:53.535" endtime="20210505 23:08:53.544"></status>
 </kw>
 <kw name="Close All Browsers" library="SeleniumLibrary" type="teardown">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20210504 14:59:16.995" endtime="20210504 14:59:19.293"></status>
+<status status="PASS" starttime="20210505 23:08:53.544" endtime="20210505 23:08:55.807"></status>
 </kw>
 <tags>
 <tag>registration</tag>
 </tags>
-<status status="PASS" starttime="20210504 14:59:08.299" endtime="20210504 14:59:19.294" critical="yes"></status>
+<status status="FAIL" starttime="20210505 23:08:40.233" endtime="20210505 23:08:55.807" critical="yes">No keyword with name 'generate_invalid_email' found. Did you mean:
+    Keywords.Ener Invalid Email</status>
 </test>
 <doc>Tests for testing create an account form</doc>
-<status status="PASS" starttime="20210504 14:59:08.166" endtime="20210504 14:59:19.296"></status>
+<status status="FAIL" starttime="20210505 23:08:40.046" endtime="20210505 23:08:55.808"></status>
 </suite>
-<status status="PASS" starttime="20210504 14:59:08.147" endtime="20210504 14:59:19.297"></status>
+<status status="FAIL" starttime="20210505 23:08:40.021" endtime="20210505 23:08:55.808"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0">Critical Tests</stat>
-<stat pass="1" fail="0">All Tests</stat>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0">registration</stat>
+<stat pass="0" fail="1">registration</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" id="s1" name="Orbita-Automation">Orbita-Automation</stat>
-<stat pass="1" fail="0" id="s1-s1" name="Signuptest">Orbita-Automation.Signuptest</stat>
+<stat pass="0" fail="1" id="s1" name="Orbita-Automation">Orbita-Automation</stat>
+<stat pass="0" fail="1" id="s1-s1" name="Signuptest">Orbita-Automation.Signuptest</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20210504 14:59:08.298" level="ERROR">Error in file 'E:\github\orbita-automation\orbita-automation\Resource\Keywords.robot' on line 5: Test library 'Resource\extendedkeywords.py' does not exist.</msg>
+<msg timestamp="20210505 23:08:40.220" level="ERROR">Error in file 'E:\github\orbita-automation\orbita-automation\signuptest.robot' on line 4: Importing test library 'E:\github\orbita-automation\orbita-automation\Resource\extendedkeywords.py' failed: SyntaxError: unexpected EOF while parsing (extendedkeywords.py, line 44)
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  E:\github\orbita-automation\Scripts\robot.exe
+  C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.1264.0_x64__qbz5n2kfra8p0\python39.zip
+  C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.1264.0_x64__qbz5n2kfra8p0\DLLs
+  C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.1264.0_x64__qbz5n2kfra8p0\lib
+  C:\Users\skryp_4p61rwg\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0
+  e:\testerly\rf-selenium
+  e:\testerly\rf-selenium\lib\site-packages</msg>
+<msg timestamp="20210505 23:08:40.233" level="ERROR">Error in file 'E:\github\orbita-automation\orbita-automation\Resource\Keywords.robot' on line 5: Test library 'Resource\extendedkeywords.py' does not exist.</msg>
 </errors>
 </robot>

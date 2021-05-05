@@ -34,7 +34,9 @@ ${REGISTRATION_BUTTON}  name=register                      #css=.btn.btn-primary
 ${MY_PROFILE_WINDOW}  css=.bread-title
 ${NEED_TO_ENTER_EMAIL_ERROR_MESSEGE}  xpath=//li[contains(.,'Помилка: Будь ласка, зазначте дійсну адресу електронної пошти.')]
 ${NEED_TO_ENTER_PASSWORD_ERROR_MESSAGE}  xpath=//li[contains(.,'Будь ласка, введіть пароль облікового запису.')]
-
+${USER_EMAIL}  trytest@ukr.net
+${USER_PASSWORD}  asdfghjkllkjhgfdsa123
+${ALREADY_USED_EMAIL_ERROR_MESSAGE}  xpath=//li[contains(.,'An account is already registered with your email address.')]
 
 
 

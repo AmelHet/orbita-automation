@@ -71,6 +71,7 @@ click on log in/sign up tab
 click "make new profile" button
     click element  ${MAKE_NEW_PROFILE_BUTTON}
 
+
 wait until "my profile" tab should be opened
     wait until page contains element  ${MY_PROFILE_WINDOW}  10
 
@@ -79,6 +80,26 @@ wait for "need to enter email" error message
 
 wait for "need to enter password" error message
      wait until page contains element  ${NEED_TO_ENTER_PASSWORD_ERROR_MESSAGE}  10
+
+put email which already has been used in email field
+    click element  ${EMAIL_REGISTRATION_FIELD}
+    input text  ${EMAIL_REGISTRATION_FIELD}  ${USER_EMAIL}
+
+enter password which already has been used in password field
+    click element  ${PASSWORD_REGISTRATION_FIELD}
+    input text  ${PASSWORD_REGISTRATION_FIELD}  ${USER_PASSWORD}
+
+
+wait for "An account is already registered with your email address" error
+    wait until page contains element  ${ALREADY_USED_EMAIL_ERROR_MESSAGE}  10
+
+
+
+
+
+
+
+
 
 
 

@@ -92,7 +92,7 @@ Search something
 
 
 SU1 Unable to make new user registration with using valid data in all fields
-    [Tags]  registration
+    [Tags]  registration1
     click on log in/sign up tab
     click "make new profile" button
     generate random email and input in "Email" field
@@ -103,7 +103,7 @@ SU1 Unable to make new user registration with using valid data in all fields
 
 
 SU2 Unable to make new user registration with emty "Email" field (without using email)
-    [Tags]  registration
+    [Tags]  registration1
     click on log in/sign up tab
     click "make new profile" button
     generate random password and input in "Password" field
@@ -113,7 +113,7 @@ SU2 Unable to make new user registration with emty "Email" field (without using 
 
 
 SU3 Unable to make new user registration with emty "password" field (without using password)
-    [Tags]  registration
+    [Tags]  registration1
     click on log in/sign up tab
     click "make new profile" button
     generate random email and input in "Email" field
@@ -122,14 +122,44 @@ SU3 Unable to make new user registration with emty "password" field (without usi
     wait for "need to enter password" error message
 
 SU4 Unable to make new user registration with emty "Password" and "Email" fields (without using emai land password)
-    [Tags]  registration
+    [Tags]  registration1
     click on log in/sign up tab
     click "make new profile" button
     press registration button
     wait for "need to enter email" error message
 
 SU5 Unable to make new user registration with data (email and password) that has already been used to sign up user in the past
-    [Tags]  registration
+    [Tags]  registration1
+    click on log in/sign up tab
+    click "make new profile" button
+    put email which already has been used in email field
+    enter password which already has been used in password field
+    press registration button
+    wait until "my profile" tab should be opened
+
+SU6 Unable to make new user registration with email that has already been used to sign up user in the past
+    [Tags]  registration1
+    click on log in/sign up tab
+    click "make new profile" button
+    put email which already has been used in email field
+    generate random password and input in "Password" field
+    press registration button
+    wait for "An account is already registered with your email address" error
+
+SU7 Unable to make new user registration with password that has already been used to sign up user in the past
+    [Tags]  registration1
+    click on log in/sign up tab
+    click "make new profile" button
+    generate random email and input in "Email" field
+    enter password which already has been used in password field
+    press registration button
+    wait until "my profile" tab should be opened
+
+
+
+
+
+
 
 
 

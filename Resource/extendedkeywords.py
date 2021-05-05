@@ -26,6 +26,16 @@ class extendedkeywords(object):
         letters = string.ascii_lowercase[:12]
         return ''.join(random.choice(letters) for i in range(password_length))
 
+    def generate_invalid_email(self,lenth1:int = 2 ,lenth2:int = 2):
+        """
+        return: generate invalid email (without using @)
+        lenth1: lenth before dot
+        lenth2: lenth after dot
+        """
+        letters = string.ascii_lowercase[:12]
+        return (''.join(random.choice(letters) for i in range(lenth1)+"."+''.join(random.choice(letters) for i in range(lenth2))
+
+
 
 
 
