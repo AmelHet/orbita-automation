@@ -94,6 +94,32 @@ wait for "An account is already registered with your email address" error
     wait until page contains element  ${ALREADY_USED_EMAIL_ERROR_MESSAGE}  10
 
 
+generate random invalid email and input in "Email" field
+    ${random_invalid_email}  generate_invalid_email  ${12}
+    click element  ${EMAIL_REGISTRATION_FIELD}
+    input text  ${EMAIL_REGISTRATION_FIELD}  ${random_invalid_email}
+
+enter already existing email in "Email" field
+    click element  ${EMAIL_LOG_IN_FIELD}
+    input text   ${EMAIL_LOG_IN_FIELD}  ${USER_EMAIL}
+
+
+enter already existing password in "Password" field
+    click element  ${PASSWORD_LOG_IN_FIELD}
+    input text  ${PASSWORD_LOG_IN_FIELD}  ${USER_PASSWORD}
+
+press log in button
+    click element  ${LOG_IN_BUTTON}
+
+
+generate random password and input in "Password" field (when logging in)
+    ${random_password}  generate_random_password  ${10}
+    click element  ${PASSWORD_LOG_IN_FIELD}
+    input text   ${PASSWORD_LOG_IN_FIELD}  ${random_password}
+
+
+wait until "Lost your password?" error message return
+    wait until page contains element  ${LOST_PASSWORD_ERROR_MESSAGE}  10
 
 
 

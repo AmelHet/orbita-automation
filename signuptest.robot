@@ -146,7 +146,7 @@ SU6 Unable to make new user registration with email that has already been used t
     press registration button
     wait for "An account is already registered with your email address" error
 
-SU7 Unable to make new user registration with password that has already been used to sign up user in the past
+SU7 Able to make new user registration with password that has already been used to sign up user in the past
     [Tags]  registration1
     click on log in/sign up tab
     click "make new profile" button
@@ -155,6 +155,31 @@ SU7 Unable to make new user registration with password that has already been use
     press registration button
     wait until "my profile" tab should be opened
 
+SU8 Unable to create new user registration with invalid email ( not use @ in email)
+    [Tags]  registration2
+    click on log in/sign up tab
+    click "make new profile" button
+    generate random invalid email and input in "Email" field
+    generate random password and input in "Password" field
+    press registration button
+    sleep  5
+
+
+LI1 Able to log in with valid data (email and password)
+    [Tags]  login1
+    click on log in/sign up tab
+    enter already existing email in "Email" field
+    enter already existing password in "Password" field
+    press log in button
+    wait until "my profile" tab should be opened
+
+LI2 Unable to log in with already existing email and invalid password
+    [Tags]  login
+    click on log in/sign up tab
+    enter already existing email in "Email" field
+    generate random password and input in "Password" field (when logging in)
+    press log in button
+    wait until "Lost your password?" error message return
 
 
 

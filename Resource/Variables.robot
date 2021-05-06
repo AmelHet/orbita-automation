@@ -37,6 +37,8 @@ ${NEED_TO_ENTER_PASSWORD_ERROR_MESSAGE}  xpath=//li[contains(.,'Будь лас�
 ${USER_EMAIL}  trytest@ukr.net
 ${USER_PASSWORD}  asdfghjkllkjhgfdsa123
 ${ALREADY_USED_EMAIL_ERROR_MESSAGE}  xpath=//li[contains(.,'An account is already registered with your email address.')]
+${LOG_IN_BUTTON}  name = login
+${LOST_PASSWORD_ERROR_MESSAGE}   xpath=//li[contains(.,'The username or password you entered is incorrect. Lost your password?')]
 
 
 
