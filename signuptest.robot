@@ -121,12 +121,14 @@ SU3 Unable to make new user registration with emty "password" field (without usi
     press registration button
     wait for "need to enter password" error message
 
+
 SU4 Unable to make new user registration with emty "Password" and "Email" fields (without using emai land password)
     [Tags]  registration1
     click on log in/sign up tab
     click "make new profile" button
     press registration button
     wait for "need to enter email" error message
+
 
 SU5 Unable to make new user registration with data (email and password) that has already been used to sign up user in the past
     [Tags]  registration1
@@ -137,6 +139,7 @@ SU5 Unable to make new user registration with data (email and password) that has
     press registration button
     wait until "my profile" tab should be opened
 
+
 SU6 Unable to make new user registration with email that has already been used to sign up user in the past
     [Tags]  registration1
     click on log in/sign up tab
@@ -146,6 +149,7 @@ SU6 Unable to make new user registration with email that has already been used t
     press registration button
     wait for "An account is already registered with your email address" error
 
+
 SU7 Able to make new user registration with password that has already been used to sign up user in the past
     [Tags]  registration1
     click on log in/sign up tab
@@ -154,6 +158,7 @@ SU7 Able to make new user registration with password that has already been used 
     enter password which already has been used in password field
     press registration button
     wait until "my profile" tab should be opened
+
 
 SU8 Unable to create new user registration with invalid email ( not use @ in email)
     [Tags]  registration2
@@ -173,8 +178,9 @@ LI1 Able to log in with valid data (email and password)
     press log in button
     wait until "my profile" tab should be opened
 
+
 LI2 Unable to log in with already existing email and invalid password
-    [Tags]  login
+    [Tags]  login1
     click on log in/sign up tab
     enter already existing email in "Email" field
     generate random password and input in "Password" field (when logging in)
@@ -182,8 +188,31 @@ LI2 Unable to log in with already existing email and invalid password
     wait until "Lost your password?" error message return
 
 
+LI3 Unable to log in without password
+    [Tags]  login1
+    click on log in/sign up tab
+    enter already existing email in "Email" field
+    press log in button
+    wait until "password field is empty" error message will be returned
 
 
+LI4 Able to reset password with using "Forgot your password" button (using the email)
+    [Tags]  login1
+    click on log in/sign up tab
+    click on "Forgot your password?" button
+    sleep  2
+    enter already existing email in "user name or email" field
+    press "reset password" button
+    wait until "letter has been sent" message return
+
+LI5 Able to reset password with using "Forgot your password" button (using the user name)
+    [Tags]  login
+    click on log in/sign up tab
+    click on "Forgot your password?" button
+    sleep  2
+    enter already existing user name in "user name or email" field
+    press "reset password" button
+    wait until "letter has been sent" message return
 
 
 

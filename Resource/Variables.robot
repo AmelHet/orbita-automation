@@ -39,7 +39,10 @@ ${USER_PASSWORD}  asdfghjkllkjhgfdsa123
 ${ALREADY_USED_EMAIL_ERROR_MESSAGE}  xpath=//li[contains(.,'An account is already registered with your email address.')]
 ${LOG_IN_BUTTON}  name = login
 ${LOST_PASSWORD_ERROR_MESSAGE}   xpath=//li[contains(.,'The username or password you entered is incorrect. Lost your password?')]
-
-
-
+${PASSWORD_FIELD_IS_EMPTY_ERROR_MESSAGE}  xpath=//li[contains(.,': Поле пароля порожнє.')]
+${FORGOT_YOUR_PASSWORD_BUTTON}  css=.lost_password > a  #xpath=//a[contains(@href, 'https://orbita.te.ua/my-account/lost-password/')]                    #xpath=//a[contains(text(),'Забули свій пароль?')]
+${USER_NAME_OR_EMAIL_FIELD}  id=user_login
+${RESET_PASSWORD_BUTTON}  css=.button
+${LETTER_HAS_BEEN_SENT_MESSAGE}  css=.woocommerce-message
+${USER_NAME}   trytest
 

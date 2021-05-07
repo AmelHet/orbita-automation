@@ -12,7 +12,9 @@ input text and press enter
     press keys  ${None}  \ue007
 
 click and input text
-    click element  ${SEARCH_LOCATOR}
+    click element  ${SEARCH_LOCATOR}er  ${MOUSE_OVER}
+    mouse over  ${PRODACT_CARD_LOCATOR}
+    click element  ${PRODACT_CARD_LOCATOR}
     input text  ${SEARCH_LOCATOR}  ${INPUT_TEXT_VAR_TWO}
 
 
@@ -25,9 +27,7 @@ add product to card
     Maximize Browser Window
     Scroll Page To Location    0    475
     sleep  2
-    mouse over  ${MOUSE_OVER}
-    mouse over  ${PRODACT_CARD_LOCATOR}
-    click element  ${PRODACT_CARD_LOCATOR}
+    mouse ov
 
 
 go to card
@@ -122,9 +122,34 @@ wait until "Lost your password?" error message return
     wait until page contains element  ${LOST_PASSWORD_ERROR_MESSAGE}  10
 
 
+wait until "password field is empty" error message will be returned
+     wait until page contains element  ${PASSWORD_FIELD_IS_EMPTY_ERROR_MESSAGE}  10
 
 
+click on "Forgot your password?" button
+    Scroll Page To Location  0  400
+    mouse over  ${FORGOT_YOUR_PASSWORD_BUTTON}
+    sleep  2
+    click element  ${FORGOT_YOUR_PASSWORD_BUTTON}
+    sleep  2
 
+
+enter already existing email in "user name or email" field
+    click element  ${USER_NAME_OR_EMAIL_FIELD}
+    input text  ${USER_NAME_OR_EMAIL_FIELD}  ${USER_EMAIL}
+
+
+press "reset password" button
+    click element  ${RESET_PASSWORD_BUTTON}
+
+
+wait until "letter has been sent" message return
+     wait until page contains element  ${LETTER_HAS_BEEN_SENT_MESSAGE}
+
+
+enter already existing user name in "user name or email" field
+     click element  ${USER_NAME_OR_EMAIL_FIELD}
+     input text  ${USER_NAME_OR_EMAIL_FIELD}  ${USER_NAME}
 
 
 

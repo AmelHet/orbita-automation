@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.2 (Python 3.9.4 on win32)" generated="20210506 19:25:13.429" rpa="false">
+<robot generator="Robot 3.2.2 (Python 3.9.4 on win32)" generated="20210507 10:44:44.222" rpa="false">
 <suite id="s1" name="Orbita-Automation" source="E:\github\orbita-automation\orbita-automation">
 <suite id="s1-s1" name="Signuptest" source="E:\github\orbita-automation\orbita-automation\signuptest.robot">
-<test id="s1-s1-t1" name="LI2 Unable to log in with already existing email and invalid password">
+<test id="s1-s1-t1" name="LI4 Able to reset password with using &quot;Forgot your password&quot; button">
 <kw name="Open Browser" library="SeleniumLibrary" type="setup">
 <doc>Opens a new browser instance to the optional ``url``.</doc>
 <arguments>
 <arg>${AUTH_PAGE_URL}</arg>
 <arg>chrome</arg>
 </arguments>
-<msg timestamp="20210506 19:25:13.784" level="INFO">Opening browser 'chrome' to base url 'https://orbita.te.ua/'.</msg>
-<status status="PASS" starttime="20210506 19:25:13.784" endtime="20210506 19:25:18.146"></status>
+<msg timestamp="20210507 10:44:44.380" level="INFO">Opening browser 'chrome' to base url 'https://orbita.te.ua/'.</msg>
+<status status="PASS" starttime="20210507 10:44:44.380" endtime="20210507 10:44:47.121"></status>
 </kw>
 <kw name="click on log in/sign up tab" library="Keywords">
 <kw name="Click Element" library="SeleniumLibrary">
@@ -18,96 +18,125 @@
 <arguments>
 <arg>${LOG_IN_TAB_LOCATOR}</arg>
 </arguments>
-<msg timestamp="20210506 19:25:18.150" level="INFO">Clicking element 'css=.login-topbar.pull-right'.</msg>
-<status status="PASS" starttime="20210506 19:25:18.149" endtime="20210506 19:25:21.475"></status>
+<msg timestamp="20210507 10:44:47.122" level="INFO">Clicking element 'css=.login-topbar.pull-right'.</msg>
+<status status="PASS" starttime="20210507 10:44:47.121" endtime="20210507 10:44:50.294"></status>
 </kw>
-<status status="PASS" starttime="20210506 19:25:18.146" endtime="20210506 19:25:21.476"></status>
+<status status="PASS" starttime="20210507 10:44:47.121" endtime="20210507 10:44:50.294"></status>
 </kw>
-<kw name="enter already existing email in &quot;Email&quot; field" library="Keywords">
+<kw name="click on &quot;Forgot your password?&quot; button" library="Keywords">
+<kw name="Scroll Page To Location" library="Keywords">
+<arguments>
+<arg>0</arg>
+<arg>400</arg>
+</arguments>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>window.scrollTo(${x_location},${y_location})</arg>
+</arguments>
+<msg timestamp="20210507 10:44:50.296" level="INFO">Executing JavaScript:
+window.scrollTo(0,400)
+Without any arguments.</msg>
+<status status="PASS" starttime="20210507 10:44:50.295" endtime="20210507 10:44:50.309"></status>
+</kw>
+<status status="PASS" starttime="20210507 10:44:50.295" endtime="20210507 10:44:50.309"></status>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${FORGOT_YOUR_PASSWORD_BUTTON}</arg>
+</arguments>
+<msg timestamp="20210507 10:44:50.310" level="INFO">Simulating Mouse Over on element 'css=.lost_password &gt; a'.</msg>
+<status status="PASS" starttime="20210507 10:44:50.309" endtime="20210507 10:44:50.602"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20210507 10:44:52.606" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210507 10:44:50.602" endtime="20210507 10:44:52.606"></status>
+</kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
-<arg>${EMAIL_LOG_IN_FIELD}</arg>
+<arg>${FORGOT_YOUR_PASSWORD_BUTTON}</arg>
 </arguments>
-<msg timestamp="20210506 19:25:21.478" level="INFO">Clicking element 'id=username'.</msg>
-<status status="PASS" starttime="20210506 19:25:21.477" endtime="20210506 19:25:21.715"></status>
+<msg timestamp="20210507 10:44:52.606" level="INFO">Clicking element 'css=.lost_password &gt; a'.</msg>
+<status status="PASS" starttime="20210507 10:44:52.606" endtime="20210507 10:44:55.472"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20210507 10:44:57.487" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210507 10:44:55.473" endtime="20210507 10:44:57.487"></status>
+</kw>
+<status status="PASS" starttime="20210507 10:44:50.294" endtime="20210507 10:44:57.488"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20210507 10:44:59.490" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210507 10:44:57.489" endtime="20210507 10:44:59.490"></status>
+</kw>
+<kw name="enter already existing email in &quot;user name or email&quot; field" library="Keywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${USER_NAME_OR_EMAIL_FIELD}</arg>
+</arguments>
+<msg timestamp="20210507 10:44:59.491" level="INFO">Clicking element 'id=user_login'.</msg>
+<status status="PASS" starttime="20210507 10:44:59.491" endtime="20210507 10:44:59.534"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
 <arguments>
-<arg>${EMAIL_LOG_IN_FIELD}</arg>
+<arg>${USER_NAME_OR_EMAIL_FIELD}</arg>
 <arg>${USER_EMAIL}</arg>
 </arguments>
-<msg timestamp="20210506 19:25:21.716" level="INFO">Typing text 'trytest@ukr.net' into text field 'id=username'.</msg>
-<status status="PASS" starttime="20210506 19:25:21.715" endtime="20210506 19:25:21.883"></status>
+<msg timestamp="20210507 10:44:59.535" level="INFO">Typing text 'trytest@ukr.net' into text field 'id=user_login'.</msg>
+<status status="PASS" starttime="20210507 10:44:59.534" endtime="20210507 10:44:59.585"></status>
 </kw>
-<status status="PASS" starttime="20210506 19:25:21.476" endtime="20210506 19:25:21.883"></status>
+<status status="PASS" starttime="20210507 10:44:59.490" endtime="20210507 10:44:59.585"></status>
 </kw>
-<kw name="generate random password and input in &quot;Password&quot; field (when logging in)" library="Keywords">
-<kw name="Generate Random Password" library="extendedkeywords">
-<arguments>
-<arg>${10}</arg>
-</arguments>
-<assign>
-<var>${random_password}</var>
-</assign>
-<msg timestamp="20210506 19:25:21.885" level="INFO">${random_password} = ialjggkdlc</msg>
-<status status="PASS" starttime="20210506 19:25:21.884" endtime="20210506 19:25:21.885"></status>
-</kw>
+<kw name="press &quot;reset password&quot; button" library="Keywords">
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
-<arg>${PASSWORD_LOG_IN_FIELD}</arg>
+<arg>${RESET_PASSWORD_BUTTON}</arg>
 </arguments>
-<msg timestamp="20210506 19:25:21.886" level="INFO">Clicking element 'id=password'.</msg>
-<status status="PASS" starttime="20210506 19:25:21.885" endtime="20210506 19:25:21.987"></status>
+<msg timestamp="20210507 10:44:59.586" level="INFO">Clicking element 'css=.button'.</msg>
+<status status="PASS" starttime="20210507 10:44:59.586" endtime="20210507 10:45:04.110"></status>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${PASSWORD_LOG_IN_FIELD}</arg>
-<arg>${random_password}</arg>
-</arguments>
-<msg timestamp="20210506 19:25:21.988" level="INFO">Typing text 'ialjggkdlc' into text field 'id=password'.</msg>
-<status status="PASS" starttime="20210506 19:25:21.987" endtime="20210506 19:25:22.098"></status>
+<status status="PASS" starttime="20210507 10:44:59.585" endtime="20210507 10:45:04.111"></status>
 </kw>
-<status status="PASS" starttime="20210506 19:25:21.883" endtime="20210506 19:25:22.098"></status>
-</kw>
-<kw name="press log in button" library="Keywords">
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${LOG_IN_BUTTON}</arg>
-</arguments>
-<msg timestamp="20210506 19:25:22.100" level="INFO">Clicking element 'name = login'.</msg>
-<status status="PASS" starttime="20210506 19:25:22.099" endtime="20210506 19:25:26.782"></status>
-</kw>
-<status status="PASS" starttime="20210506 19:25:22.099" endtime="20210506 19:25:26.783"></status>
-</kw>
-<kw name="wait until &quot;Lost your password?&quot; error message return" library="Keywords">
+<kw name="wait until &quot;letter has been sent&quot; message return" library="Keywords">
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
 <arguments>
-<arg>${LOST_PASSWORD_ERROR_MESSAGE}</arg>
-<arg>10</arg>
+<arg>${LETTER_HAS_BEEN_SENT_MESSAGE}</arg>
 </arguments>
-<status status="PASS" starttime="20210506 19:25:26.786" endtime="20210506 19:25:26.987"></status>
+<status status="PASS" starttime="20210507 10:45:04.111" endtime="20210507 10:45:04.129"></status>
 </kw>
-<status status="PASS" starttime="20210506 19:25:26.784" endtime="20210506 19:25:26.988"></status>
+<status status="PASS" starttime="20210507 10:45:04.111" endtime="20210507 10:45:04.129"></status>
 </kw>
 <kw name="Close All Browsers" library="SeleniumLibrary" type="teardown">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20210506 19:25:26.988" endtime="20210506 19:25:29.145"></status>
+<status status="PASS" starttime="20210507 10:45:04.130" endtime="20210507 10:45:06.273"></status>
 </kw>
 <tags>
 <tag>login</tag>
 </tags>
-<status status="PASS" starttime="20210506 19:25:13.780" endtime="20210506 19:25:29.145" critical="yes"></status>
+<status status="PASS" starttime="20210507 10:44:44.379" endtime="20210507 10:45:06.273" critical="yes"></status>
 </test>
 <doc>Tests for testing create an account form</doc>
-<status status="PASS" starttime="20210506 19:25:13.456" endtime="20210506 19:25:29.147"></status>
+<status status="PASS" starttime="20210507 10:44:44.240" endtime="20210507 10:45:06.275"></status>
 </suite>
-<status status="PASS" starttime="20210506 19:25:13.434" endtime="20210506 19:25:29.148"></status>
+<status status="PASS" starttime="20210507 10:44:44.223" endtime="20210507 10:45:06.277"></status>
 </suite>
 <statistics>
 <total>
@@ -123,6 +152,6 @@
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20210506 19:25:13.780" level="ERROR">Error in file 'E:\github\orbita-automation\orbita-automation\Resource\Keywords.robot' on line 5: Test library 'Resource\extendedkeywords.py' does not exist.</msg>
+<msg timestamp="20210507 10:44:44.378" level="ERROR">Error in file 'E:\github\orbita-automation\orbita-automation\Resource\Keywords.robot' on line 5: Test library 'Resource\extendedkeywords.py' does not exist.</msg>
 </errors>
 </robot>
